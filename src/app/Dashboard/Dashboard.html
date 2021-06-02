@@ -1,0 +1,51 @@
+<div>
+  <form #taskListFrm="ngForm">
+    <ul class="task-list">
+      <li
+        *ngFor="let task of mTasks; let taskIndex = index;"
+        [ngClass]="{'strike-through': task.beingDeleted}"
+      >
+        <div class="d-flex align-items-center justify-content-between">
+          <div class="d-flex align-items-center task-name-wrap">
+            <b class="d-flex align-items-center justify-content-center"
+              >{{taskIndex + 1}}</b
+            >
+            <h6 class="truncate-text" title="{{task.taskName}}">
+              {{task.taskName}}
+            </h6>
+          </div>
+          <span
+            class="d-flex align-items-center justify-content-center"
+            (click)="taskCompleted(task, taskIndex)"
+            ><img src="./../../assets/thumbs-up.svg" width="14" alt="Tick"
+          /></span>
+        </div>
+      </li>
+      <li class="add-task">
+        <div class="d-flex align-items-center justify-content-between">
+          <div class="d-flex align-items-center width-100">
+            <b class="d-flex align-items-center justify-content-center"
+              >{{mTasks.length + 1}}</b
+            >
+            <div class="width-100 mr-20">
+              <input
+                class="width-100"
+                type="text"
+                placeholder="Enter New Task!"
+                name="newTaskName"
+                [(ngModel)]="mNewTaskName"
+                required
+              />
+            </div>
+          </div>
+          <span
+            class="d-flex align-items-center justify-content-center"
+            [ngClass]="{'disabled' : !taskListFrm.valid || emptyTextValidation()}"
+            (click)="addTask()"
+            ><img src="./../../assets/check.svg" width="18" alt="Tick"
+          /></span>
+        </div>
+      </li>
+    </ul>
+  </form>
+</div>

@@ -1,1 +1,82 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
+
+* {
+    font-family: "Nunito", sans-serif;
+    font-weight: 400;
+    box-sizing: border-box;
+}
+
+@import "./sass-partials/reset";
+@import "./sass-partials/common";
+@import "./sass-partials/header";
+@import "./sass-partials/welcome";
+@import "./sass-partials/dashboard";
+
+.page-content {
+    height: calc(100vh - 72px);
+    padding: 20px 0;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.card {
+    background: #fff;
+    width: 300px;
+    height: 300px;
+    border-radius: 2px;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 19px 38px rgb(0 0 0 / 30%), 0 15px 12px rgb(0 0 0 / 22%);
+}
+
+input {
+    outline: none;
+    box-shadow: none;
+    &:focus {
+        border-color: #6200ee;
+    }
+}
+
+.btn {
+    cursor: pointer;
+    border-radius: 2px;
+    color: white;
+    background-color: #6200ee;
+    width: 100%;
+    padding: 8px 12px;
+    &:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+    }
+}
+
+h4 {
+    display: block;
+    font-weight: 500;
+    font-size: 22px;
+    margin-bottom: 18px;
+}
+
+.snackbar {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    position: fixed;
+    color: #fff;
+    z-index: 100;
+    left: 50%;
+    right: 0;
+    bottom: 0;
+    font-size: 14px;
+    transform: translate(-50%, 50px);
+    width: fit-content;
+    border-radius: 2px;
+    background-color: #323232;
+    pointer-events: auto;
+    padding: 12px 30px;
+    line-height: 1.7;
+    overflow: hidden;
+    text-align: center;
+    max-width: 320px;
+    &.show {
+        transform: translate(-50%, -50px);
+    }
+}

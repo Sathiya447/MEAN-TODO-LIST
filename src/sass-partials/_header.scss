@@ -1,0 +1,37 @@
+header {
+    background-color: #6200ee;
+    box-shadow: 0px 2px 7px 1px rgb(0 0 0 / 40%);
+    ul {
+        li {
+            &:not(:last-child) {
+                margin-right: 16px;
+            }
+        }
+    }
+    a {
+        text-decoration: none;
+        color: white;
+    }
+}
+
+.inp-form {
+    label {
+        display: block;
+        margin-bottom: 8px;
+        color: #908686;
+    }
+    input {
+        width: 100%;
+        border: 1px solid #908686;
+        border-radius: 2px;
+        padding: 6px 12px;
+    }
+}
+
+.welcome-msg {
+    color: white;
+    img {
+        cursor: pointer;
+        margin-left: 16px;
+    }
+}

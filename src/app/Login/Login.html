@@ -1,0 +1,31 @@
+<div>
+  <h4 class="text-center">Log In</h4>
+  <div class="d-flex justify-content-center">
+    <div class="card">
+      <form #loginFrm="ngForm" class="inp-form">
+        <div class="mb-16">
+          <label>Email</label>
+          <input type="text" name="email" [(ngModel)]="mEmail" required />
+        </div>
+        <div class="mb-24">
+          <label>Password</label>
+          <input
+            type="password"
+            name="password"
+            [(ngModel)]="mPassword"
+            required
+          />
+        </div>
+        <div>
+          <button
+            class="btn"
+            (click)="onLoginClick()"
+            [disabled]="!loginFrm.valid"
+          >
+            LOG IN
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
